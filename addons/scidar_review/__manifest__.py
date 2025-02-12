@@ -1,0 +1,33 @@
+# -*- coding: utf-8 -*-
+{
+    'name': "HR Performance Appraisal",
+    'version': '1.0',
+    'summary': "Employee Performance Review & Appraisal System",
+    'sequence': 10,
+    'author': "Your Company",
+    'website': "https://yourcompany.com",
+    'category': 'Human Resources',
+    'depends': ['base', 'hr', 'hr_appraisal', 'mail', 'calendar'],
+    'data': [
+        'security/ir.model.access.csv',
+        'views/hr_performance_views.xml',
+        'views/hr_performance_rating_views.xml',
+        'views/hr_performance_note_views.xml',
+        'views/hr_performance_goal_views.xml',
+        'views/request_appraisal_views.xml',
+        'views/res_company_views.xml',
+        'views/res_users_views.xml',
+        'data/appraisal_mail_templates.xml',
+        'data/appraisal_cron_jobs.xml',
+        'security/hr_performance_security.xml',
+        'report/hr_performance_reports.xml',
+        'menu/hr_performance_menus.xml',
+    ],
+    'demo': [
+        'demo/hr_performance_demo.xml',
+    ],
+    'application': True,
+    'installable': True,
+    'auto_install': False,
+    'license': 'OEEL-1',
+}

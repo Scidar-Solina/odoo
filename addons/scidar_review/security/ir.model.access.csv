@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_performance_user,HR Performance User,model_hr_performance,group_hr_performance_user,1,1,1,0
+access_hr_performance_manager,HR Performance Manager,model_hr_performance,group_hr_performance_manager,1,1,1,1
+access_hr_performance_rating_user,HR Performance Rating User,model_hr_performance_rating,group_hr_performance_user,1,1,1,0
+access_hr_performance_note_user,HR Performance Note User,model_hr_performance_note,group_hr_performance_user,1,1,1,0
+access_hr_performance_goal_user,HR Performance Goal User,model_hr_performance_goal,group_hr_performance_user,1,1,1,0
+access_request_appraisal_user,Request Appraisal User,model_request_appraisal,group_hr_performance_user,1,1,1,0
+access_request_appraisal_manager,Request Appraisal Manager,model_request_appraisal,group_hr_performance_manager,1,1,1,1

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="mail_template_appraisal_confirm" model="mail.template">
+        <field name="name">Appraisal Confirmation</field>
+        <field name="model_id" ref="hr.model_hr_performance"/>
+        <field name="subject">Performance Appraisal Scheduled</field>
+        <field name="email_from">${object.manager_id.email}</field>
+        <field name="email_to">${object.employee_id.work_email}</field>
+        <field name="body_html"><![CDATA[
+            <p>Hello ${object.employee_id.name},</p>
+            <p>Your performance appraisal has been scheduled for ${object.date_close}.</p>
+            <p>Best Regards,<br/>HR Team</p>
+        ]]></field>
+    </record>
+</odoo>

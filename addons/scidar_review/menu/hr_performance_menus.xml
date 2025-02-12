@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_hr_performance_root" name="Performance Appraisals" parent="hr.menu_hr_root" sequence="10"/>
+
+    <menuitem id="menu_hr_performance" name="Appraisals" parent="menu_hr_performance_root" sequence="10"/>
+    <menuitem id="menu_hr_performance_goals" name="Employee Goals" parent="menu_hr_performance_root" sequence="20"/>
+    <menuitem id="menu_hr_performance_notes" name="Assessment Notes" parent="menu_hr_performance_root" sequence="30"/>
+    <menuitem id="menu_hr_performance_requests" name="Appraisal Requests" parent="menu_hr_performance_root" sequence="40"/>
+</odoo>

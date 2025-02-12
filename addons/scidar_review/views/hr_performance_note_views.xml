@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_hr_performance_note_tree" model="ir.ui.view">
+        <field name="name">hr.performance.note.tree</field>
+        <field name="model">hr.performance.note</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="sequence"/>
+            </tree>
+        </field>
+    </record>
+</odoo>
