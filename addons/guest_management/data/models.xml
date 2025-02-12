@@ -1,0 +1,6 @@
+<odoo>
+  <record id="model_gms_guest" model="ir.model">
+    <field name="name">GMS Guest</field>
+    <field name="model">gms.guest</field>
+  </record>
+</odoo>

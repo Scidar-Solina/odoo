@@ -1,0 +1,53 @@
+<odoo>
+
+    <record id="gms_model_tree_view" model="ir.ui.view">
+        <field name="name">gms.model.tree.view</field>
+        <field name="model">gms.guest</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="lastName"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="whoToSee"/>
+                <field name="address"/>
+                <field name="purpose"/>
+                <field name="organization"/>
+                <field name="check_in"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="x_gms_model_form_view" model="ir.ui.view">
+        <field name="name">gms.model.form.view</field>
+        <field name="model">gms.guest</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="lastName"/>
+                        <field name="email"/>
+                        <field name="phone"/>
+                        <field name="whoToSee"/>
+                        <field name="address"/>
+                        <field name="purpose"/>
+                        <field name="organization"/>
+                        <field name="check_in"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="gms_guest_action" model="ir.actions.act_window">
+        <field name="name">Guests</field>
+        <field name="res_model">gms.guest</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="guest_management_menu" name="Guest Management" sequence="10"/>
+    <menuitem id="guests_menu" parent="guest_management_menu" name="Guests" />
+    <menuitem id="guests_menu_sub" parent="guests_menu" name="Guests List" action="gms_guest_action" />
+</odoo>
