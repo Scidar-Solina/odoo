@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_performance_goal_form_view" model="ir.ui.view">
+            <field name="name">hr.performance.goal.form</field>
+            <field name="model">hr.performance.goal</field>
+            <field name="arch" type="xml">
+                <form string="Performance Goal">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="deadline"/>
+                            <field name="state"/>
+                            <field name="progress"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_hr_performance_goal_tree" model="ir.ui.view">
+            <field name="name">hr.performance.goal.tree</field>
+            <field name="model">hr.performance.goal</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="deadline"/>
+                    <field name="state"/>
+                    <field name="progress"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="hr_performance_goal_action" model="ir.actions.act_window">
+            <field name="name">Performance Goals</field>
+            <field name="res_model">hr.performance.goal</field>
+            <field name="view_mode">kanban,tree</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">No goals yet.</p>
+                <p>Create a new goal by clicking on "Create".</p>
+            </field>
+        </record>
+    </data>    
+</odoo>

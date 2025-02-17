@@ -1,9 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <menuitem id="menu_hr_performance_root" name="Performance Appraisals" parent="hr.menu_hr_root" sequence="10"/>
+  <!-- Define actions for each view -->
+    <record id="hr_performance_action" model="ir.actions.act_window">
+      <field name="name">Appraisals</field>
+      <field name="res_model">hr.performance</field>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">No appraisals yet</p>
+        <p>Create a new appraisal by clicking on "Create".</p>
+      </field>
+    </record>
 
-    <menuitem id="menu_hr_performance" name="Appraisals" parent="menu_hr_performance_root" sequence="10"/>
-    <menuitem id="menu_hr_performance_goals" name="Employee Goals" parent="menu_hr_performance_root" sequence="20"/>
-    <menuitem id="menu_hr_performance_notes" name="Assessment Notes" parent="menu_hr_performance_root" sequence="30"/>
-    <menuitem id="menu_hr_performance_requests" name="Appraisal Requests" parent="menu_hr_performance_root" sequence="40"/>
+    <record id="action_hr_performance_goal" model="ir.actions.act_window">
+      <field name="name">Employee Goals</field>
+      <field name="res_model">hr.performance.goal</field>
+      <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <record id="action_hr_performance_note" model="ir.actions.act_window">
+      <field name="name">Assessment Notes</field>
+      <field name="res_model">hr.performance.note</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_request_appraisal" model="ir.actions.act_window">
+      <field name="name">Appraisal Requests</field>
+      <field name="res_model">request.appraisal</field>
+      <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <!-- Create the menus -->
+    <menuitem id="menu_hr_performance_root" 
+              name="Performance Appraisals" 
+              parent="hr.menu_hr_root" 
+              web_icon="scidar_review,static/description/icon.png" 
+              sequence="10"/>
+    
+    <menuitem id="menu_hr_performance" 
+              name="Appraisals" 
+              parent="menu_hr_performance_root" 
+              sequence="10" 
+              action="action_hr_performance"/>
+    
+    <menuitem id="menu_hr_performance_goals" 
+              name="Employee Goals" 
+              parent="menu_hr_performance_root" 
+              sequence="20" 
+              action="action_hr_performance_goal"/>
+    
+    <menuitem id="menu_hr_performance_notes" 
+              name="Assessment Notes" 
+              parent="menu_hr_performance_root" 
+              sequence="30" 
+              action="action_hr_performance_note"/>
+    
+    <menuitem id="menu_hr_performance_requests" 
+              name="Appraisal Requests" 
+              parent="menu_hr_performance_root" 
+              sequence="40" 
+              action="action_request_appraisal"/>
 </odoo>

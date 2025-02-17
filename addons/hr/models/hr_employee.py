@@ -41,11 +41,17 @@ class HrEmployeePrivate(models.Model):
     user_partner_id = fields.Many2one(related='user_id.partner_id', related_sudo=False, string="User's partner")
     active = fields.Boolean('Active', related='resource_id.active', default=True, store=True, readonly=False)
     resource_calendar_id = fields.Many2one(tracking=True)
+    next_appraisal_date = fields.Date(string="Next Appraisal Date")
+    last_appraisal_date = fields.Date(string="Last Appraisal Date")
+    last_appraisal_id = fields.Many2one("hr.performance", string="Last Appraisal")
+    appraisal_count = fields.Integer(string="Appraisal Count", compute="_compute_appraisal_count")
+    uncomplete_goals_count = fields.Integer(string="Uncompleted Goals", compute="_compute_uncomplete_goals_count")
     department_id = fields.Many2one(tracking=True)
     company_id = fields.Many2one('res.company', required=True)
     company_country_id = fields.Many2one('res.country', 'Company Country', related='company_id.country_id', readonly=True)
     company_country_code = fields.Char(related='company_country_id.code', depends=['company_country_id'], readonly=True)
     # private info
+    related_partner_id = fields.Many2one('res.partner', related='user_id.partner_id', string="Partner")
     private_street = fields.Char(string="Private Street", groups="hr.group_hr_user")
     private_street2 = fields.Char(string="Private Street2", groups="hr.group_hr_user")
     private_city = fields.Char(string="Private City", groups="hr.group_hr_user")
@@ -609,3 +615,7 @@ class HrEmployeePrivate(models.Model):
 
     def _mail_get_partner_fields(self, introspect_fields=False):
         return ['user_partner_id']
+    
+    def _compute_appraisal_count(self):
+        for record in self:
+            record.appraisal_count = self.env['hr.performance'].search_count([('employee_id', '=', record.id)])

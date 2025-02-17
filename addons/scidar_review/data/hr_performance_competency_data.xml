@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Categories -->
+    <record id="cat_problem_solving" model="hr.performance.rating.category">
+        <field name="name">Problem Solving</field>
+        <field name="sequence">10</field>
+        <field name="description">Covers problem solving skills like quantitative reasoning, analytical reasoning, etc.</field>
+    </record>
+
+    <record id="cat_communication" model="hr.performance.rating.category">
+        <field name="name">Communication (oral &amp; written)</field>
+        <field name="sequence">20</field>
+        <field name="description">Covers clarity &amp; conciseness, storylining, public speaking, etc.</field>
+    </record>
+
+    <record id="cat_computer_skills" model="hr.performance.rating.category">
+        <field name="name">Computer Skills</field>
+        <field name="sequence">30</field>
+        <field name="description">Covers usage of PowerPoint, Excel, Word, etc.</field>
+    </record>
+
+    <!-- Competencies for Problem Solving -->
+    <record id="comp_quantitative_reasoning" model="hr.performance.competency">
+        <field name="name">Quantitative reasoning</field>
+        <field name="category_id" ref="cat_problem_solving"/>
+        <field name="sequence">10</field>
+    </record>
+    <record id="comp_analytical_reasoning" model="hr.performance.competency">
+        <field name="name">Analytical reasoning</field>
+        <field name="category_id" ref="cat_problem_solving"/>
+        <field name="sequence">20</field>
+    </record>
+    <record id="comp_accuracy_detail" model="hr.performance.competency">
+        <field name="name">Accuracy &amp; detail-mindedness</field>
+        <field name="category_id" ref="cat_problem_solving"/>
+        <field name="sequence">30</field>
+    </record>
+    <record id="comp_thought_structuring" model="hr.performance.competency">
+        <field name="name">Thought structuring</field>
+        <field name="category_id" ref="cat_problem_solving"/>
+        <field name="sequence">40</field>
+    </record>
+
+    <!-- Communication (oral & written) -->
+    <record id="comp_clarity_conciseness" model="hr.performance.competency">
+        <field name="name">Clarity &amp; conciseness</field>
+        <field name="category_id" ref="cat_communication"/>
+        <field name="sequence">10</field>
+    </record>
+    <record id="comp_coherence_storylining" model="hr.performance.competency">
+        <field name="name">Coherence (storylining)</field>
+        <field name="category_id" ref="cat_communication"/>
+        <field name="sequence">20</field>
+    </record>
+    <record id="comp_public_speaking" model="hr.performance.competency">
+        <field name="name">Presence / Confidence / Public speaking</field>
+        <field name="category_id" ref="cat_communication"/>
+        <field name="sequence">30</field>
+    </record>
+
+    <!-- Computer Skills -->
+    <record id="comp_powerpoint" model="hr.performance.competency">
+        <field name="name">PowerPoint</field>
+        <field name="category_id" ref="cat_computer_skills"/>
+        <field name="sequence">10</field>
+    </record>
+    <record id="comp_data_analytics_excel_chart" model="hr.performance.competency">
+        <field name="name">Data analytics, excel and chart</field>
+        <field name="category_id" ref="cat_computer_skills"/>
+        <field name="sequence">20</field>
+    </record>
+    <record id="comp_word" model="hr.performance.competency">
+        <field name="name">Word</field>
+        <field name="category_id" ref="cat_computer_skills"/>
+        <field name="sequence">30</field>
+    </record>
+    <record id="comp_other_software" model="hr.performance.competency">
+        <field name="name">Other relevant software</field>
+        <field name="category_id" ref="cat_computer_skills"/>
+        <field name="sequence">40</field>
+    </record>
+</odoo>

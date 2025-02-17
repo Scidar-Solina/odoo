@@ -10,11 +10,6 @@ class ResCompany(models.Model):
     _inherit = "res.company"
 
     # Default feedback templates for employees and managers
-    def _get_default_employee_feedback_template(self):
-        return self.env['ir.qweb']._render('hr_appraisal.hr_appraisal_employee_feedback')
-
-    def _get_default_manager_feedback_template(self):
-        return self.env['ir.qweb']._render('hr_appraisal.hr_appraisal_manager_feedback')
 
     def _get_default_appraisal_confirm_mail_template(self):
         return self.env.ref('hr_appraisal.mail_template_appraisal_confirm', raise_if_not_found=False)
@@ -22,8 +17,6 @@ class ResCompany(models.Model):
     # Automated appraisal settings
     appraisal_plan = fields.Boolean(string="Automatically Generate Appraisals", default=True)
     assessment_note_ids = fields.One2many('hr.performance.note', 'company_id', string="Assessment Notes")
-    appraisal_employee_feedback_template = fields.Html(string="Employee Feedback Template", translate=True)
-    appraisal_manager_feedback_template = fields.Html(string="Manager Feedback Template", translate=True)
     appraisal_confirm_mail_template = fields.Many2one(
         'mail.template', string="Appraisal Confirmation Email",
         domain="[('model', '=', 'hr.performance')]",

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-        <record id="hr_performance_rating_tree_view" model="ir.ui.view">
-            <field name="name">hr.performance.rating.tree</field>
-            <field name="model">hr.performance.rating</field>
+  <data>
+
+     <record id="hr_performance_problem_tree_view" model="ir.ui.view">
+            <field name="name">hr.performance.problem.solving.tree</field>
+            <field name="model">hr.performance.problem.solving</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="description" />
-                    <field name="objectives" />
+                    <!-- <field name="competency"/> -->
                     <field name="employee_rating"/>
                     <field name="reviewer_rating"/>
                     <field name="comments"/>
                 </tree>
             </field>
         </record>
-    </data>
+  </data>
 </odoo>

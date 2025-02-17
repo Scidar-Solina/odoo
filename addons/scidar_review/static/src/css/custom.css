@@ -1,0 +1,5 @@
+/* Enable text wrapping for the specific_objectives field */
+.o_specific_objectives_cell {
+    white-space: normal !important; /* Allow text to wrap */
+    word-wrap: break-word !important; /* Break long words if necessary */
+}

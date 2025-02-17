@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="performance_review_template" name="Performance Review">
+        <t t-call="web.layout">
+            <t t-foreach="docs" t-as="doc">
+                <div class="container">
+                    <h2 class="text-center">Performance Review</h2>
+                    
+                    <table class="table table-condensed">
+                        <tr>
+                            <th>Employee Name</th>
+                            <td t-esc="doc.employee_id.name"/>
+                        </tr>
+                        <tr>
+                            <th>Current Position</th>
+                            <td t-esc="doc.current_position"/>
+                        </tr>
+                        <tr>
+                            <th>Next Position</th>
+                            <td t-esc="doc.next_position"/>
+                        </tr>
+                        <tr>
+                            <th>Review Date</th>
+                            <td t-esc="doc.review_date"/>
+                        </tr>
+                    </table>
+                    
+                    <h3>Performance Ratings</h3>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Competency</th>
+                                <th>Employee Rating</th>
+                                <th>Manager Rating</th>
+                                <th>Comments</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="doc.rating_ids" t-as="rating">
+                                <tr>
+                                    <td t-esc="rating.competency"/>
+                                    <td t-esc="rating.employee_rating"/>
+                                    <td t-esc="rating.reviewer_rating"/>
+                                    <td t-esc="rating.comments"/>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                    
+                    <h3>Goals and Development</h3>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Goal</th>
+                                <th>Deadline</th>
+                                <th>Progress</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="doc.goal_ids" t-as="goal">
+                                <tr>
+                                    <td t-esc="goal.name"/>
+                                    <td t-esc="goal.deadline"/>
+                                    <td t-esc="goal.progress"/>
+                                    <td t-esc="goal.state"/>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

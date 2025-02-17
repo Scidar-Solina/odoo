@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_performance_comms_tree_view" model="ir.ui.view">
+            <field name="name">hr.performance.team.tree</field>
+            <field name="model">hr.performance.team</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="descriptionsTeam" />
+                    <field name="objectivesTeam"/>
+                    <field name="employee_rating_team"/>
+                    <field name="reviewer_rating_team"/>
+                    <field name="comments_team"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

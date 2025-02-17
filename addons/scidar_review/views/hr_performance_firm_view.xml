@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_performance_firm_tree_view" model="ir.ui.view">
+            <field name="name">hr.performance.firm.tree</field>
+            <field name="model">hr.performance.firm.leadership</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="descriptionsFirm" />
+                    <field name="objectivesFirm"/>
+                    <field name="employee_rating_firm"/>
+                    <field name="reviewer_rating_firm"/>
+                    <field name="comments_firm"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>
